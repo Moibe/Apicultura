@@ -1,0 +1,11 @@
+pragma solidity ^0.8.0;
+
+import './yields-utils-v2/token/ERC20Rewards.sol';
+import './yields-utils-v2/token/ERC20.sol';
+
+contract Abeja is ERC20Rewards {
+  constructor(address rewardsToken) 
+  ERC20Rewards('Abeja', 'BEE', 18, IERC20(rewardsToken)) {
+    _mint(msg.sender, 1000);
+  }
+}
